@@ -7,6 +7,7 @@ use Shopware\Components\Plugin;
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
 use Shopware\Components\Theme\LessDefinition;
+use Shopware\Components\Plugin\Context\ActivateContext;
 
 class CohaFloatingCatNav extends Plugin
 {
@@ -93,6 +94,12 @@ class CohaFloatingCatNav extends Plugin
         );
     }
 
+    // On Activation
+    public function activate(ActivateContext $context)
+    {
+        $context->scheduleClearCache(ActivateContext::CACHE_LIST_ALL);
+    }
+
     public function uninstall(UninstallContext $context)
     {
         $service = $this->container->get('shopware_attribute.crud_service');
@@ -105,7 +112,7 @@ class CohaFloatingCatNav extends Plugin
            [],
            [
                 __DIR__ .
-                '/Resources/views/frontend/_public/src/less/coha_floating_cat_nav.less'
+                '/Resources/views/frontend/_public/src/less/coha-floating-cat-nav.less'
            ]
         );
       }
