@@ -1,0 +1,56 @@
+
+
+// @media screen and (min-width: 48em) {
+//     .shop--navigation {display: none;}
+// }
+
+.thin-icon {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    &.user {
+
+    }
+    &.bag {
+
+    }
+}
+
+@media screen and (min-width: 48em) {
+
+    .shop--navigation .navigation--list {
+        display: none;
+    }
+
+    .navigation--list-wrapper {
+
+        overflow: inherit;
+
+        .navigation--list {
+            overflow: visible;
+
+            .navigation--entry {
+
+                &.entry--cart,
+                &.entry--account {
+                    float: right;
+
+                    .navigation--link {
+                        .unitize-padding(5, 10);
+                    }
+                }
+
+                &.entry--cart {
+
+                }
+                &.entry--account {
+
+                }
+            }
+        }
+    }
+
+}

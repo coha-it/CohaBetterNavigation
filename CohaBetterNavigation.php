@@ -46,7 +46,7 @@ class CohaFloatingCatNav extends Plugin
         // ]);
 
         // Is Activated?
-        $service->update('s_categories_attributes', 'coha_cat_floating', 'boolean', [
+        /*$service->update('s_categories_attributes', 'coha_cat_floating', 'boolean', [
             'label' => 'Floating Cat Activated',
             'supportText' => 'Is "Floating Category" enabled on this Category?',
             'helpText' => 'If yes, the following Category will float in a direction',
@@ -62,9 +62,28 @@ class CohaFloatingCatNav extends Plugin
 
             //user can modify the attribute in the free text field module
             'custom' => true,
+        ]);*/
+
+        // Is Group Right
+        $service->update('s_categories_attributes', 'coha_cat_floating', 'boolean', [
+            'label' => 'Floating to Right',
+            'supportText' => 'Select if this Menu should float to right',
+            'helpText' => 'If yes, the following Category will float in the right Direction',
+
+            //user has the opportunity to translate the attribute field for each shop
+            'translatable' => true,
+
+            //attribute will be displayed in the backend module
+            'displayInBackend' => true,
+
+            //numeric position for the backend view, sorted ascending
+            'position' => 250,
+
+            //user can modify the attribute in the free text field module
+            'custom' => true,
         ]);
 
-        $service->update('s_categories_attributes', 'coha_cat_floating_direction', 'combobox', [
+        /*$service->update('s_categories_attributes', 'coha_cat_floating_direction', 'combobox', [
                 'label' => 'Floating Cat Direction',
                 'supportText' => 'The Floating Direction',
                 'helpText' => 'Defines the Direction in which the Category-Point should float',
@@ -91,7 +110,7 @@ class CohaFloatingCatNav extends Plugin
             ],
             null,
             true
-        );
+        );*/
     }
 
     // On Activation
@@ -103,16 +122,16 @@ class CohaFloatingCatNav extends Plugin
     public function uninstall(UninstallContext $context)
     {
         $service = $this->container->get('shopware_attribute.crud_service');
+        //service->delete('s_categories_attributes', 'coha_cat_floating_direction');
         $service->delete('s_categories_attributes', 'coha_cat_floating');
-        $service->delete('s_categories_attributes', 'coha_cat_floating_direction');
     }
 
     public function addLessFiles(){
         return new LessDefinition(
            [],
            [
-                __DIR__ .
-                '/Resources/views/frontend/_public/src/less/coha-floating-cat-nav.less'
+                __DIR__ . '/Resources/views/frontend/_public/src/less/coha-floating-cat-nav.less',
+                __DIR__ . '/Resources/views/frontend/_public/src/less/coha-shop-nav-in-cart.less'
            ]
         );
       }
