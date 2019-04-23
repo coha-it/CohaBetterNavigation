@@ -19,10 +19,15 @@
 {block name='frontend_index_navigation_categories_navigation_list'}
     <ul class="navigation--list container coha--floating coha--floating-left" role="menubar" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
         {strip}
-            {block name='frontend_index_navigation_categories_top_home'}
-                {action module=widgets controller=checkout action=info}
 
-                {$smarty.block.parent}
+            {block name='frontend_index_navigation_categories_top_home'}
+                <li class="navigation--entry{if $sCategoryCurrent == $sCategoryStart && $Controller == 'index'} is--active{/if} is--home" role="menuitem">
+                    {block name='frontend_index_navigation_categories_top_link_home'}
+                        <a class="navigation--link is--first{if $sCategoryCurrent == $sCategoryStart && $Controller == 'index'} active{/if}" href="{url controller='index'}" title="{s name='IndexLinkHome' namespace="frontend/index/categories_top"}{/s}" itemprop="url">
+                            <span itemprop="name">{s name='IndexLinkHome' namespace="frontend/index/categories_top"}{/s}</span>
+                        </a>
+                    {/block}
+                </li>
             {/block}
 
             {block name='frontend_index_navigation_categories_top_before'}{/block}
@@ -41,17 +46,15 @@
     </ul>
 
     <ul class="navigation--list container coha--floating coha--floating-right" role="menubar" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-        <div class="coha--floating coha--floating-right">
-            {foreach $sMainCategories as $sCategory}
-                {$coha_floating = $sCategory.attribute.coha_cat_floating}
-
-                {if $coha_floating}
-                    {block name='frontend_index_navigation_categories_top_entry'}
-                        {$smarty.block.parent}
-                    {/block}
-                {/if}
-            {/foreach}
-        </div>
+        {foreach $sMainCategories as $sCategory}
+            {$coha_floating = $sCategory.attribute.coha_cat_floating}
+            {if $coha_floating}
+                {block name='frontend_index_navigation_categories_top_entry'}
+                    {$smarty.block.parent}
+                {/block}
+            {/if}
+        {/foreach}
+        {action module=widgets controller=checkout action=info}
     </ul>
 
 {/block}

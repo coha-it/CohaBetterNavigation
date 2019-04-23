@@ -1,6 +1,6 @@
 <?php 
 
-namespace CohaFloatingCatNav;
+namespace CohaBetterNavigation;
 
 use Doctrine\ORM\Tools\SchemaTool;
 use Shopware\Components\Plugin;
@@ -9,7 +9,7 @@ use Shopware\Components\Plugin\Context\UninstallContext;
 use Shopware\Components\Theme\LessDefinition;
 use Shopware\Components\Plugin\Context\ActivateContext;
 
-class CohaFloatingCatNav extends Plugin
+class CohaBetterNavigation extends Plugin
 {
 
     public function install(InstallContext $context)
@@ -130,8 +130,7 @@ class CohaFloatingCatNav extends Plugin
         return new LessDefinition(
            [],
            [
-                __DIR__ . '/Resources/views/frontend/_public/src/less/coha-floating-cat-nav.less',
-                __DIR__ . '/Resources/views/frontend/_public/src/less/coha-shop-nav-in-cart.less'
+                __DIR__ . '/Resources/views/frontend/_public/src/less/coha-better-nav.less',
            ]
         );
       }
