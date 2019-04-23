@@ -7,9 +7,23 @@
 
 // FLOATING NAVIGATION POINTS
 .coha--floating {
-    max-width: 50%;
-    &.coha--floating-left {float: left; text-align: left; }
-    &.coha--floating-right {float: right; text-align: right;  }
+    max-width: ~"calc(50% - 110px)";
+    width: auto;
+    display: inline-block;
+    &.coha--floating-left {
+        float: left;
+        text-align: left;
+        .navigation--entry {
+            float: left;
+        }
+    }
+    &.coha--floating-right {
+        float: right;
+        text-align: right; 
+        .navigation--entry {
+            float: right;
+        }
+    }
 }
 
 

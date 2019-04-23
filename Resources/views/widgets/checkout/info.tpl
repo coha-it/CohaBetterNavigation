@@ -1,20 +1,5 @@
 {extends file="parent:widgets/checkout/info.tpl"}
 
-{* Notepad entry *}
-{*block name="frontend_index_checkout_actions_notepad"}
-    <li class="navigation--entry entry--notepad" role="menuitem">
-        {s namespace="frontend/index/checkout_actions" name="IndexLinkNotepad" assign="snippetIndexLinkNotepad"}{/s}
-        <a href="{url controller='note'}" title="{$snippetIndexLinkNotepad|escape}" class="">
-            <i class="icon--heart"></i>
-            {if $sNotesQuantity > 0}
-                <span class="badge notes--quantity">
-                    {$sNotesQuantity}
-                </span>
-            {/if}
-        </a>
-    </li>
-{/block*}
-
 {* My account entry *}
 {block name="frontend_index_checkout_actions_my_options"}
     <li class="navigation--entry entry--account{if {config name=useSltCookie} || $sOneTimeAccount} with-slt{/if}"
@@ -64,5 +49,3 @@
         <div class="ajax-loader">&nbsp;</div>
     </li>
 {/block}
-
-{block name="frontend_index_checkout_actions_inner"}{/block}
