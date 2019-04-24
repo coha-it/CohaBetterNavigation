@@ -4,50 +4,40 @@
 //     .shop--navigation {display: none;}
 // }
 
-
-// FLOATING NAVIGATION POINTS
-.coha--floating {
-    max-width: ~"calc(50% - 110px)";
-    width: auto;
-    display: inline-block;
-    &.coha--floating-left {
-        float: left;
-        text-align: left;
-        .navigation--entry {
-            float: left;
-        }
+@media screen and (min-width: @tabletViewportWidth) {
+    .shop--navigation .navigation--list {
+        display: none;
     }
-    &.coha--floating-right {
-        float: right;
-        text-align: right; 
-        .navigation--entry {
+
+    .navigation--list-wrapper .navigation--entry {
+        float: left;
+        &.entry--cart,
+        &.entry--account {
             float: right;
         }
     }
 }
 
+@media screen and (min-width: 1260px) {
 
-// Thin icons
-.thin-icon {
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    background-size: auto 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    &.user {
-        padding-top: 2px;
-    }
-    &.bag {
-        padding-top: 0px;
-    }
-}
+    // Home Floating
+    .is--home {float: left;}
 
-@media screen and (min-width: 48em) {
-
-    .shop--navigation .navigation--list {
-        display: none;
+    // FLOATING NAVIGATION POINTS
+    .coha--floating {
+        max-width: ~"calc(50% - 90px)";
+        width: auto;
+        display: inline-block;
+        &.coha--floating-left {
+            float: left;
+            text-align: left;
+        }
+        &.coha--floating-right {
+            float: right;
+            text-align: right; 
+        }
     }
+
 
     .navigation--list-wrapper {
 
@@ -63,7 +53,7 @@
                     float: right;
 
                     .navigation--link {
-                        .unitize-padding(5, 10);
+                        .unitize-padding(4, 3, 0);
                     }
                 }
 
@@ -76,5 +66,7 @@
             }
         }
     }
+
+
 
 }
