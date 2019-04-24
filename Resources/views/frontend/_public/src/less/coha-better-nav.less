@@ -4,53 +4,50 @@
 //     .shop--navigation {display: none;}
 // }
 
+
+
 @media screen and (min-width: @tabletViewportWidth) {
     .shop--navigation .navigation--list {
         display: none;
     }
 
     .navigation--list-wrapper .navigation--entry {
-        float: left;
         &.entry--cart,
         &.entry--account {
-            float: right;
+            
         }
     }
 }
 
-@media screen and (min-width: 1260px) {
+@media screen and (min-width: @desktopViewportWidth) {
 
-    // Home Floating
-    .is--home {float: left;}
-
-    // FLOATING NAVIGATION POINTS
-    .coha--floating {
-        max-width: ~"calc(50% - 90px)";
-        width: auto;
-        display: inline-block;
-        &.coha--floating-left {
-            float: left;
-            text-align: left;
-        }
-        &.coha--floating-right {
-            float: right;
-            text-align: right; 
-        }
+    .navigation-main .navigation--list {
+        white-space: normal;
     }
 
-
-    .navigation--list-wrapper {
-
+    .navigation-main > .container > .navigation--list-wrapper {
+        text-align: center;
         overflow: inherit;
 
-        .navigation--list {
+        .navigation--list.container {
             overflow: visible;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+            vertical-align: middle;
 
-            .navigation--entry {
+            &>.navigation--entry {
+
+                min-width: 33px;
+
+                &.coha--navigation-space {
+                    margin-right: 19%;
+                }
 
                 &.entry--cart,
                 &.entry--account {
-                    float: right;
+                    
 
                     .navigation--link {
                         .unitize-padding(4, 3, 0);
@@ -65,8 +62,7 @@
                 }
             }
         }
+
     }
-
-
 
 }

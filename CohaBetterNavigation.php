@@ -17,10 +17,10 @@ class CohaBetterNavigation extends Plugin
         $service = $this->container->get('shopware_attribute.crud_service');
 
         // Is Group Right
-        $service->update('s_categories_attributes', 'coha_cat_floating', 'boolean', [
-            'label' => 'Floating to Right',
-            'supportText' => 'Select if this Menu should float to right',
-            'helpText' => 'If yes, the following Category will float in the right Direction',
+        $service->update('s_categories_attributes', 'coha_navigation_space', 'boolean', [
+            'label' => 'Space to the Right',
+            'supportText' => 'Select if This Menu should create Space on the Right side',
+            'helpText' => 'If this is Checked, a few pixels (about 200-300px) will be spaced to the right',
 
             //user has the opportunity to translate the attribute field for each shop
             'translatable' => true,
@@ -47,7 +47,7 @@ class CohaBetterNavigation extends Plugin
     {
         $service = $this->container->get('shopware_attribute.crud_service');
         //service->delete('s_categories_attributes', 'coha_cat_floating_direction');
-        $service->delete('s_categories_attributes', 'coha_cat_floating');
+        $service->delete('s_categories_attributes', 'coha_navigation_space');
     }
 
     public function addLessFiles(){
