@@ -34,7 +34,6 @@ class CohaBetterNavigation extends Plugin
             //user can modify the attribute in the free text field module
             'custom' => true,
         ]);
-
     }
 
     // On Activation
