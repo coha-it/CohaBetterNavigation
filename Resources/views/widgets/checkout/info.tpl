@@ -10,6 +10,7 @@
         <div class="ajax-loader">&nbsp;</div>
     </li>
 
+    {* Account entry *}
     <li class="navigation--entry entry--account{if {config name=useSltCookie} || $sOneTimeAccount} with-slt{/if}"
         role="menuitem"
         data-offcanvas="true"
