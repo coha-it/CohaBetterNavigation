@@ -5,7 +5,11 @@
     <li class="navigation--entry entry--cart" role="menuitem">
         {s namespace="frontend/index/checkout_actions" name="IndexLinkCart" assign="snippetIndexLinkCart"}{/s}
         <a class="navigation--link" href="{url controller='checkout' action='cart'}" title="{$snippetIndexLinkCart|escape}">
+
             <i class="thin-icon bag"></i>
+
+            <span class="badge is--primary is--minimal cart--quantity{if $sBasketQuantity < 1} is--hidden{/if}">{$sBasketQuantity}</span>
+
         </a>
         <div class="ajax-loader">&nbsp;</div>
     </li>
