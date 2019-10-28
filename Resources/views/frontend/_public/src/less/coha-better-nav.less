@@ -25,8 +25,20 @@
     opacity: 0;
   }
 
+  .container--ajax-cart {
+        cursor: default;
+  }
+
+  &:not(.js--menu-scroller--item) .container--ajax-cart {
+      transition: 0ms;
+  }
+
+  &.js--menu-scroller--item .container--ajax-cart {
+      transition: all 0.45s cubic-bezier(0.3, 0, 0.15, 1);
+  }
+
   &.js--is--dropdown-active .container--ajax-cart.off-canvas {
-    transform: unset;
+      transform: unset;
   }
 
   &.js--is--dropdown-active:after {
