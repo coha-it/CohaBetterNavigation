@@ -7,10 +7,6 @@
 
 
 /* Account Sidebar Fixes */
-.js--is--dropdown-active .container--ajax-cart.off-canvas {
-  transform: unset;
-}
-
 .navigation--entry.entry--account {
   cursor: default;
 
@@ -29,12 +25,14 @@
     opacity: 0;
   }
 
+  &.js--is--dropdown-active .container--ajax-cart.off-canvas {
+    transform: unset;
+  }
 
   &.js--is--dropdown-active:after {
     opacity: 1;
   }
 }
-
 /* END: Account Sidebar Fixes */
 
 
