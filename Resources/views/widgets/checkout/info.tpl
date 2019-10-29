@@ -14,6 +14,7 @@
         <div class="ajax-loader">&nbsp;</div>
     </li>
 
+    {* Account entry *}
     <li class="navigation--entry entry--account{if {config name=useSltCookie} || $sOneTimeAccount} with-slt{/if}"
         role="menuitem"
         data-offcanvas="true"
@@ -28,7 +29,7 @@
 
         {if {config name=useSltCookie} || $sOneTimeAccount}
             {block name="frontend_index_checkout_actions_account_navigation"}
-                <div class="account--dropdown-navigation">
+                <div class="account--dropdown-navigation container--ajax-cart off-canvas is--right">
 
                     {block name="frontend_index_checkout_actions_account_navigation_smartphone"}
                         <div class="navigation--smartphone">
