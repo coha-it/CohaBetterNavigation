@@ -109,6 +109,20 @@
 
 }
 
+// Navigation Link Fix
+.navigation-main > .container > .navigation--list-wrapper {
+    .navigation--list.container {
+        &>.navigation--entry {
+            &.entry--cart,
+            &.entry--account {
+                .navigation--link {
+                    .unitize-padding(4, 3, 0);
+                }
+            }
+        }
+    }
+}
+
 
 // Styling
 .navigation--entry.entry--cart .badge.cart--quantity {
